@@ -50,7 +50,6 @@ internal sealed class ServerSession
 	public string Id { get; }
 	public ServerVersion ServerVersion { get; set; }
 	public int ActiveCommandId { get; private set; }
-	public int CancellationTimeout { get; private set; }
 	public int ConnectionId { get; set; }
 	public byte[]? AuthPluginData { get; set; }
 	public uint CreatedTicks { get; }
@@ -1040,7 +1039,7 @@ internal sealed class ServerSession
 			}
 			catch (SocketException)
 			{
-				// name couldn't be resolved
+				Log.Warn($"Could not resolve hostname {hostName}.");
 				continue;
 			}
 
