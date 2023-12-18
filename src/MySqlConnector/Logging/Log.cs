@@ -34,7 +34,7 @@ internal static partial class Log
 	[LoggerMessage(EventIds.SendingQuitCommand, LogLevel.Trace, "Session {SessionId} sending QUIT command")]
 	public static partial void SendingQuitCommand(ILogger logger, string sessionId);
 
-	[LoggerMessage(EventIds.ConnectingFailed, LogLevel.Error, "Session {SessionId} connecting failed")]
+	[LoggerMessage(EventIds.ConnectingFailed, LogLevel.Warning, "Session {SessionId} connecting failed")]
 	public static partial void ConnectingFailed(ILogger logger, string sessionId);
 
 	[LoggerMessage(EventIds.ServerSentAuthPluginName, LogLevel.Trace, "Session {SessionId} server sent auth plugin name {AuthPluginName}")]
